@@ -18,7 +18,7 @@ public class Movement : State
 
     public override void Enter()
     {
-        moveSpeed = 5;
+        moveSpeed =  10;
 
         base.Enter();
     }
@@ -49,7 +49,7 @@ public class Movement : State
 
     public void MovePlayer()
     {
-        this.npc.transform.position = new Vector3(npc.transform.position.x + _HorizontalInput, 0, npc.transform.position.z + _VerticalInput);
+        this.npc.transform.position = new Vector3(npc.transform.position.x + _HorizontalInput * Time.deltaTime, npc.transform.position.y, npc.transform.position.z + _VerticalInput * Time.deltaTime);
     }
 
 }
