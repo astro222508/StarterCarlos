@@ -78,7 +78,7 @@ public class State
         if (stage == EVENT.EXIT)
         {
             Exit();
-            return stateName;
+            return nextStage;
         }
         return this;
     }
