@@ -36,10 +36,10 @@ public class State
     protected State nextStage;
 
 
-    public State(GameObject _npa)
+    public State(GameObject _npc)
     {
         //Get reference to this game object.
-        this.npc = _npa;
+        this.npc = _npc;
         //Set the process of the stage to enter
         this.stage = EVENT.ENTER;
     }
