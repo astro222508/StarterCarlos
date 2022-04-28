@@ -26,7 +26,10 @@ public class Movement : State
     public override void Update()
     {
 
+        
         UpdateInputs();
+
+
 
         //Move player
         MovePlayer();
@@ -43,6 +46,13 @@ public class Movement : State
     {
         _HorizontalInput = Input.GetAxis("Horizontal") * moveSpeed;
         _VerticalInput = Input.GetAxis("Vertical") * moveSpeed;
+
+        if(_HorizontalInput == 0 && _VerticalInput == 0)
+        {
+            nextStage = new Idle(this.npc);
+            stage = EVENT.EXIT;
+            return;
+        }
 
         
     }
