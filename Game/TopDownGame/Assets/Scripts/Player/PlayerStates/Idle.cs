@@ -84,11 +84,14 @@ public class Idle : State
             return true;
         }
 
+        
+
         return false;
     }
 
     public bool AttackInput()
     {
+        /*
         //Check for a left click
         if (Input.GetMouseButtonDown(0))
         {
@@ -96,7 +99,7 @@ public class Idle : State
             return true;
 
         }
-
+        */
         return false;
     }
 
