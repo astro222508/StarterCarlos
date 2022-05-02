@@ -16,9 +16,14 @@ public class Idle : State
 
     #endregion
 
+    #region Player info
+    private PlayerInfo _PlayerInfo;
+
+    #endregion 
+
     public Idle(GameObject playerObj) : base(playerObj)
     {
-
+        _PlayerInfo = GameManager.Singleton.PlayerInfo; 
     }
 
     public override void Enter()
@@ -31,6 +36,11 @@ public class Idle : State
     {
         //Update inputs 
         CheckForNewState();
+
+
+        Debug.Log("Help");
+        //Update look direction 
+        _PlayerInfo.UpdateLookDirection();
 
     }
 
@@ -84,6 +94,7 @@ public class Idle : State
             return true;
         }
 
+        
         
 
         return false;

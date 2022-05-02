@@ -9,6 +9,8 @@ public class Movement : State
     private float _HorizontalInput;
     private float _VerticalInput;
 
+    private PlayerInfo _PlayerInfo;
+
     private float moveSpeed;
 
     public Movement(GameObject player) : base(player)
@@ -19,7 +21,7 @@ public class Movement : State
     public override void Enter()
     {
         moveSpeed =  10;
-
+        _PlayerInfo = GameManager.Singleton.PlayerInfo;
         base.Enter();
     }
 
@@ -30,6 +32,7 @@ public class Movement : State
         UpdateInputs();
 
 
+        _PlayerInfo.UpdateLookDirection();
 
         //Move player
         MovePlayer();

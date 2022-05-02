@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class GameManager 
+public sealed class GameManager
 {
 
     /// <summary>
@@ -10,7 +10,12 @@ public sealed class GameManager
     /// </summary>
     private static GameManager instance;
 
-    private PlayerInfo _PlayerInfo = new PlayerInfo();
+
+
+
+    private GameObject _PlayerObject;
+
+    private static PlayerInfo _PlayerInfo = new PlayerInfo();
     public PlayerInfo PlayerInfo { get { return _PlayerInfo; } }
 
 
@@ -21,15 +26,22 @@ public sealed class GameManager
     {
         get
         {
-            
+
             if (instance == null)
             {
                 instance = new GameManager();
-                
+                instance._PlayerObject = GameObject.FindGameObjectWithTag("Player");
+
             }
 
             return instance;
         }
+    }
+
+    public GameObject GetPlayerObject()
+    {
+        return GameObject.FindGameObjectWithTag("Player");
+
     }
 
 }
