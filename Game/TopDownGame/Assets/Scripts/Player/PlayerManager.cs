@@ -19,6 +19,8 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         playerState = playerState.Process();
+
+
     }
 
 }
